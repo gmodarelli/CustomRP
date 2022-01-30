@@ -6,9 +6,9 @@ namespace CustomRP
     [CreateAssetMenu(menuName = "Rendering/CustomRP/RenderPipelineAsset")]
     public class RenderPipelineAsset : UnityEngine.Rendering.RenderPipelineAsset
     {
-        protected override RenderPipeline CreatePipeline()
+        protected override UnityEngine.Rendering.RenderPipeline CreatePipeline()
         {
-            return new RenderPipelineInstance(this);
+            return new RenderPipeline(this);
         }
     }
 }

@@ -5,7 +5,6 @@ Shader "CustomRP/SimpleUnlitColor"
 		_BaseColor("Base Color", Color) = (1, 1, 1, 1)
 	}
 
-
     SubShader
     {
         Pass
