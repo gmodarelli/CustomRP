@@ -27,7 +27,7 @@ namespace CustomRP
         {
             using (new ProfilingScope(commandBuffer, ProfilingSampler.Get(ProfileID.RecordRenderGraph)))
             {
-                TextureHandle backBuffer = m_RenderGraph.ImportBackbuffer(camera.targetTexture);
+                TextureHandle backBuffer = m_RenderGraph.ImportBackbuffer(BuiltinRenderTextureType.CameraTarget);
 
                 var prepassOutput = RenderPrepass(m_RenderGraph, cullingResults, camera);
                 TextureHandle postProcessDest = RenderPostProcess(m_RenderGraph, prepassOutput, backBuffer, cullingResults, camera);

@@ -32,6 +32,8 @@ namespace CustomRP
         {
             using (var builder = renderGraph.AddRenderPass<FinalPassData>("Final Pass", out var passData, ProfilingSampler.Get(ProfileID.FinalPost)))
             {
+                builder.AllowRendererListCulling(false);
+
                 // TODO: This is temporary, we're using the GBuffer Albedo render target
                 passData.source = builder.ReadTexture(prepassOutput.gbuffer.mrt[0]);
                 passData.destination = builder.WriteTexture(backBuffer);
